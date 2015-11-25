@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MainApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Mean-Demo</title>
+</head>
+<body>
+
+	<h1>Mean-Demo</h1>
+
+	{{ 7*7 }}
+	<div ng-controller='ShirtsController as ctrl'>
+		
+		The hardcoded shirts count is: {{ctrl.testShirtsArr.length}}
+
+		<ul>
+			<li ng-repeat='shirt in ctrl.testShirtsArr'>
+				{{ shirt.name }} -- {{ shirt.color }}
+			</li>
+		</ul>
+
+
+
+		<form ng-submit='ctrl.addShirt()'>
+			
+			<input type='text' placeholder='shirt name' ng-model='ctrl.newShirtName'></input>
+			<input type='text' placeholder='color' ng-model='ctrl.newShirtColor'></input>
+			<button>Add Shirt</button>
+
+		</form>
+
+
+	</div>
+	<div ng-controller='ShortsController as ctrl'>
+		
+
+
+
+	</div>
+	<div ng-controller='HoodiesController as ctrl'>
+		
+
+
+
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+	
+	<script src="/js/main/app.js"></script>
+	<script src="/js/main/main.controllers.js"></script>
+	
+</body>
+</html>
