@@ -8,6 +8,7 @@ var express						= require('express'),
 /*
  * Connect mongoose to mongodb... i.e., giving mongoose the location of our server
  */
+// mongoose.connect('mongodb://localhost:27017/mean-demo');
 mongoose.connect('mongodb://localhost:27017/mean-demo');
 
 /*
@@ -20,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/mean-demo');
  * respond with index.html page in the structure below.
  */
 app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/client/views/index.html');
+	res.sendFile(__dirname + '/server/index.html');
 });
 
 /*
@@ -29,10 +30,19 @@ app.get('/', function (req, res) {
  */
 app.use('/js', express.static(__dirname + '/client/js'));
 
+
+// REST APIs below
 /*
+ * Create a POST route for ShirtsController
  * Post request and response to specified url
  */
 app.post('/api/shirts', ShirtsController.create);
+
+/*
+ * Create a GET route for ShirtsController
+ */
+app.get('/api/shirts', ShirtsController.list);
+
 
 /*
  * Set port to 4200 and listen for requests

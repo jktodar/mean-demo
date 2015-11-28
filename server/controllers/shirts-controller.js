@@ -11,3 +11,9 @@ module.exports.create = function (req, res){
 		res.json(result);
 	});
 };
+
+module.exports.list = function (req, res){
+	Shirts.find({}, function (err, results){
+		res.json(results);
+	});
+};

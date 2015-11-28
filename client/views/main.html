@@ -3,19 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mean-Demo</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
 
-	<h1>Mean-Demo</h1>
+	<div class="container">
+		<div class="page-header">
+		  <input type='search' class='searchBox'>
+		  <label class='siteName'><h1>ChrisFitGear<small>.com</small></h1></label>
+
+		  <nav class="navbar navbar-default ">
+		  <div >
+		    <label>Tops</label><label>Bottoms</label><label>Shoes</label>
+		  </div>
+			</nav>
+		</div>
+		
+		<h1>Something</h1>
+
+
+	<div class='cris'></div>
+
+
+
+
+	</div>
 
 	{{ 7*7 }}
 	<div ng-controller='ShirtsController as ctrl'>
 		
 		The hardcoded shirts count is: {{ctrl.testShirtsArr.length}}
 
+		
 		<ul>
-			<li ng-repeat='shirt in ctrl.testShirtsArr'>
+			<li ng-repeat='shirt in ctrl.shirtsArray'>
 				{{ shirt.name }} -- {{ shirt.color }}
+				<button ng-click='ctrl.deleteShirt()'>Delete</button>
 			</li>
 		</ul>
 
@@ -49,7 +72,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-	
+
 	<script src="/js/main/app.js"></script>
 	<script src="/js/main/main.controllers.js"></script>
 	
