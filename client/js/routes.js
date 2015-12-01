@@ -25,15 +25,25 @@ angular
   .config([
 '$stateProvider',
 '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
+function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: '/api/shirts.html',
+      templateUrl: '/js/main/main.html',
+      controller: 'MainController as ctrl'
+    })
+    .state('shirts', {
+      url: '/shirts',
+      templateUrl: '/js/main/shirts.html',
       controller: 'ShirtsController as ctrl'
-    });
-console.log('HI there from routes Page');
+    })
+    // .state('about', {
+    //   url: '/about',
+    //   templateUrl: 'partials/about.html',
+    //   controller: 'formController'
+    // })
+    ;
 
 
   $urlRouterProvider.otherwise('home');

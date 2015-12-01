@@ -16,4 +16,12 @@
     .page-header nav label {
       margin: 10px 30px 0px 30px; }
 
+.shirts li {
+  margin: 5px 5px 5px 5px;
+  width: 130px;
+  height: 100px;
+  background-color: #90C3D4;
+  list-style-type: none;
+  float: left; }
+
 /*# sourceMappingURL=main.css.map */

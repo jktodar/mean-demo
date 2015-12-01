@@ -1,0 +1,35 @@
+<div>
+		
+		<h1>Shirts Page</h1>
+
+
+	<div class='cris'></div>
+
+
+
+
+	{{ 7*8 }}
+	<div ng-controller='ShirtsController as ctrl'>
+		
+		The hardcoded shirts count is: {{ctrl.testShirtsArr.length}}
+
+		
+		<ul class='shirts'>
+			<li ng-repeat='shirt in ctrl.shirtsArray'>
+				{{ shirt.name }} -- {{ shirt.color }}
+				<button ng-click='ctrl.deleteShirt()'>Delete</button>
+			</li>
+		</ul>
+
+
+
+		<form ng-submit='ctrl.addShirt()'>
+			
+			<input type='text' placeholder='shirt name' ng-model='ctrl.newShirtName'></input>
+			<input type='text' placeholder='color' ng-model='ctrl.newShirtColor'></input>
+			<button>Add Shirt</button>
+
+		</form>
+
+
+</div>

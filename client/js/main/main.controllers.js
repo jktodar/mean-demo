@@ -29,12 +29,24 @@ angular.module('MainApp', ['ngResource', 'ui.router'])
 		};
 
 	}])
-	.controller('ShortsController', function (){
-	console.log('hello from ShortsController');
-	var self = this;
-})
 
-.controller('HoodiesController', function (){
-	console.log('hello from HoodiesController');
-	var self = this;
-});
+	.controller('ShortsController', function (){
+		console.log('hello from ShortsController');
+		var self = this;
+	})
+
+	.controller('HoodiesController', function (){
+		console.log('hello from HoodiesController');
+		var self = this;
+	})
+
+	.controller('MainController', function (){
+		console.log('hello from MainController');
+
+		var self = this;
+		self.message = 'hello from MainController';
+	});
+
+
+
+

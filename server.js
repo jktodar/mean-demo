@@ -2,8 +2,10 @@ var express						= require('express'),
 	  app 							= express(),
 	  bodyParser 				= require('body-parser'),
 	  mongoose 					= require('mongoose'),
+	  logger 						= require('morgan'),
 	  ShirtsController 	= require('./server/controllers/shirts-controller.js');
 
+console.log('server.js - I run once...');
 
 /*
  * Connect mongoose to mongodb... i.e., giving mongoose the location of our server
@@ -17,11 +19,23 @@ mongoose.connect('mongodb://localhost:27017/mean-demo');
  app.use(bodyParser());
 
 /*
+ * Logs all requests to the terminal
+ */
+ app.use(logger('tiny'));
+
+/*
  * When a GET request is made to the root directory, 
  * respond with index.html page in the structure below.
  */
 app.get('/', function (req, res) {
+	// <Directory "/Applications/XAMPP/xamppfiles/apache2/htdocs/index.php">
+	console.log('localhost:4200/ - I run on every browser request for / ...');
 	res.sendFile(__dirname + '/server/index.html');
+
+});
+
+app.get('/foo', function (req, res) {
+	res.send('I am Foo');
 });
 
 /*
@@ -29,6 +43,9 @@ app.get('/', function (req, res) {
  * This just cuts out having to type /client/js for every request
  */
 app.use('/js', express.static(__dirname + '/client/js'));
+
+app.use('/CSS', express.static(__dirname + '/client/CSS'));
+app.use('/css', express.static(__dirname + '/bower_components/bootstrap/dist/css'));
 
 
 // REST APIs below
